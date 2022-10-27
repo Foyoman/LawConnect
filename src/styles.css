@@ -20,6 +20,7 @@
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	position: fixed;
 	width: 100%;
@@ -48,21 +49,78 @@
 	max-height: 100%;
 }
 
-#toggle-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
+.menu {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-#toggle-button .bar {
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 10px;
+.menu ul {
+	width: 100%;
+	list-style: none;
+	text-align: center;
 }
 
+.menu li {
+	width: 100%;
+	height: 50px;
+}
+
+.menu a {
+	text-decoration: none;
+	color: white;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#burger-menu {
+	height: 100%;
+	width: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.burger-bar {
+	width: 100%;
+	height: 3px;
+	background-color: white;
+	border-radius: 0.5em;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: inherit;
+}
+
+.burger-bar.clicked:nth-child(1) {
+	transform: rotate(45deg) translate(6px, 6px);
+	transition: ease-out 0.3s;
+}
+
+.burger-bar.clicked:nth-child(2) {
+	transform: scale(0);
+	transition: ease-out 0.3s;
+}
+
+.burger-bar.clicked:nth-child(3) {
+	transform: rotate(135deg) translate(-6px, 6px);
+	transition: ease-out 0.3s;
+}
+
+.burger-bar.unclicked {
+	transform: rotate(0) translate(0);
+	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+}
 
 .section > .container {
 	padding: 40px 15px;
@@ -78,7 +136,7 @@
 	background: transparent linear-gradient(0deg, #0A49AF 0%, #0E5FE3 86%, #0E5FE3 100%) 0% 0% no-repeat padding-box;
 	color: white;
 	text-align: center;
-	padding-top: 94px;
+	padding-top: 40px;
 }
 
 #header > .container {
@@ -95,13 +153,13 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	/* justify-content: space-between; */
+	justify-content: center;
 	align-items: center;
 	gap: 24px;
 }
 
 #header-content h2 {
-	/* padding: 0 5px; */
 	font-size: 40px;
 }
 
@@ -120,6 +178,7 @@ button {
 	white-space: nowrap;
 	font-size: 100%;
 	background: var(--skyblue);
+	cursor: pointer;
 }
 
 #solutions h2 {
@@ -210,6 +269,10 @@ button {
 
 	.container {
 		max-width: 1158px;
+	}
+
+	#navbar {
+		flex-direction: row;
 	}
 	
 	#navbar > .container {
