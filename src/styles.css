@@ -181,7 +181,7 @@ button {
 
 #solutions h2 {
 	text-align: center;
-	font-weight: lighter;
+	font-weight: 400;
 	color: var(--dark-blue);
 	font-size: 30px;
 	margin-bottom: 30px;
@@ -320,7 +320,6 @@ button {
 	}
 
 	#header-content > *, .container > * {
-		/* width: 100%; */
 		max-width: none;
 		position: relative;
 		z-index: 100;
