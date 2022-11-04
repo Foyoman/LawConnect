@@ -44,7 +44,7 @@ export default function Navbar() {
           <button>Create Free Account</button>
         </div>
       </div>
-      <div className={` ${ menuClass } mobile-only `}>
+      <div className={ `${ menuClass } mobile-only` }>
         <ul>
           <li><a href="#">For People</a></li>
           <li><a href="#">For Businesses</a></li>
